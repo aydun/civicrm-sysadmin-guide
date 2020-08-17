@@ -141,10 +141,11 @@ Should an upgrade fail, you will need this backup copy to restore your site.
 
 * Starting in Version 5.13.x CiviCRM now can support "Clean URLs" for WordPress front-end (user-facing) pages.
 * By default CiviCRM URLs are in the format of https://example.org/civicrm?page=CiviCRM&q=civicrm/contribute/transact&reset=1&id=1 for a Contribution Page.  Enabling Cleaner URLs will enable URLs in the format of
-  * A Contribution Page will have the format of https://example.org/civicrm/contribute/transact/?reset=1&id=1 
-  * Profile Pages can be accessed at https://example.org/civicrm/profile/edit/?gid=1&reset=1 or https://wpcvrc.tadpole.cc/civicrm/profile/create/?gid=1&reset=1
-  * Listings would be at https://example.org/civicrm/profile/?gid=1&reset=1
-  * The User's Contact Dashboard can be accessed at https://example.org/civicrm/user/?reset=1
+
+    * A Contribution Page will have the format of https://example.org/civicrm/contribute/transact/?reset=1&id=1 
+    * Profile Pages can be accessed at https://example.org/civicrm/profile/edit/?gid=1&reset=1 or https://wpcvrc.tadpole.cc/civicrm/profile/create/?gid=1&reset=1
+    * Listings would be at https://example.org/civicrm/profile/?gid=1&reset=1
+    * The User's Contact Dashboard can be accessed at https://example.org/civicrm/user/?reset=1
 * To Enable Cleaner URLs , start by backing up your `Civicrm.settings.php` file as detailed in the "Locate and Backup the CiviCRM settings file" section above.
 * Then find this section of code in `civicrm.settings.php` On a default install it should be around line 480
 
@@ -161,8 +162,6 @@ if (!defined('CIVICRM_CLEANURL')) {
   }
 }
 ```
-
-
 
 * Replace the above code with:
 
@@ -184,7 +183,8 @@ if (!defined('CIVICRM_CLEANURL')) {
   }
 }
 ```
-* You will need to go to https://example.org/wp-admin/admin.php?page=CiviCRM&q=civicrm/admin/setting/uf&reset=1Go and make sure the base page points to an existing WP page (usually /civicrm)
+
+* You will need to go to https://example.org/wp-admin/admin.php?page=CiviCRM&q=civicrm/admin/setting/uf&reset=1  Go and make sure the base page points to an existing WP page (usually /civicrm)
 
 * You will need  to flush rewrite rules in WordPress for clean URLs to work. Visit the Permalinks settings page to trigger this Go to Settings —> permalinks The URL will be  https://example.org/wp-admin/options-permalink.php
 
